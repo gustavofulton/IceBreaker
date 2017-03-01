@@ -1,0 +1,29 @@
+<!--
+  Generated template for the ConfirmCode page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Confirm Code</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <img src="http://msuhatch.com/wp-content/uploads/2017/01/icebreaker.png" />
+  <h3>Please confirm the code. </h3>
+  <ion-list>
+    <ion-item>
+      <ion-label color="primary">Code</ion-label>
+      <ion-input type="text" value="{{code}}" maxlength="4"></ion-input>
+    </ion-item>
+  </ion-list>
+  <h4 (click)="goToMain()"> Submit </h4>
+
+  <h6> Resend </h6>
+
+</ion-content>
