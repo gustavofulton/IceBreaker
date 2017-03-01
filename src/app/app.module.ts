@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { RegisterPage } from '../pages/register/register';
 import { ConfirmCodePage } from '../pages/confirm-code/confirm-code';
+import { MessagesPage } from '../pages/messages/messages';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ConfirmCodePage } from '../pages/confirm-code/confirm-code';
     HomePage,
     RegisterPage,
     ConfirmCodePage,
+    MessagesPage,
     TabsPage
   ],
   imports: [
@@ -29,6 +31,7 @@ import { ConfirmCodePage } from '../pages/confirm-code/confirm-code';
     HomePage,
     RegisterPage,
     ConfirmCodePage,
+    MessagesPage,
     TabsPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
