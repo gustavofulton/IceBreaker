@@ -24,9 +24,9 @@ export class ConfirmCodePage {
   goToMain() {
     this.navCtrl.push(TabsPage);
   }
-  
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ConfirmCodePage');
+
+  refreshCode() {
+    this.code = (Math.floor(Math.random() * 5000) + 1000).toString();
   }
 
 }
