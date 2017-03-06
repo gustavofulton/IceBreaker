@@ -8,6 +8,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { RegisterPage } from '../pages/register/register';
 import { ConfirmCodePage } from '../pages/confirm-code/confirm-code';
 import { MessagesPage } from '../pages/messages/messages';
+import { SearchPage } from '../pages/search/search';
+import { SettingsPage } from '../pages/settings/settings';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { MessagesPage } from '../pages/messages/messages';
     RegisterPage,
     ConfirmCodePage,
     MessagesPage,
+    SearchPage,
+    SettingsPage,
     TabsPage
   ],
   imports: [
@@ -32,6 +36,8 @@ import { MessagesPage } from '../pages/messages/messages';
     RegisterPage,
     ConfirmCodePage,
     MessagesPage,
+    SearchPage,
+    SettingsPage,
     TabsPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
