@@ -27,7 +27,21 @@
         },
         "cordova-sms-plugin": {
             "PACKAGE_NAME": "io.ionic.starter"
+        },
+        "cordova-plugin-googlemaps": {
+            "API_KEY_FOR_IOS": "AIzaSyA6Fnb658l8WIB1OKDuRbdvLW9f6Q-LT54",
+            "NSLOCATIONWHENINUSEUSAGEDESCRIPTION": "Show your location on the map",
+            "NSLOCATIONALWAYSUSAGEDESCRIPTION": "Trace your location on the map",
+            "PACKAGE_NAME": "com.ionicframework.icebreaker299570"
+        },
+        "cordova-plugin-mapbox": {
+            "ACCESS_TOKEN": "pk.eyJ1IjoiaWNlYnJlYWtlciIsImEiOiJjaXp4YzQ4a2owMW14MnFsc3drd29sM3htIn0.-OYtzOxFlka1g1y6yEdPHQ",
+            "PACKAGE_NAME": "com.ionicframework.icebreaker299570"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "com.googlemaps.ios": {
+            "PACKAGE_NAME": "com.ionicframework.icebreaker299570"
+        }
+    }
 }

@@ -1,61 +1,46 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
-import { NavController, Platform } from 'ionic-angular';
-import { GoogleMap, GoogleMapsLatLng, Geolocation } from 'ionic-native';
-declare var google: any;
+import { Component, OnInit } from '@angular/core';
+import { NavController } from 'ionic-angular';
+
+import * as Leaflet from 'leaflet';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage {
-  @ViewChild('map') mapElement: ElementRef;
-  map: any;
+export class HomePage implements OnInit{
 
-  constructor(public navCtrl: NavController, public platform: Platform) {
-  }
-
-  initJSMaps(mapElement) {
-    Geolocation.getCurrentPosition().then(pos => {
-      let LatLng = new GoogleMapsLatLng(pos.coords.latitude, pos.coords.longitude);
-      var mapOptions = {
-              center: LatLng,
-              zoom: 16,
-              mapTypeId: google.maps.MapTypeId.RoadMAP
-          };
-      new google.maps.Map(mapElement, mapOptions);
-
-    }, (err) => {
-      console.log(err);
-    });
+  constructor(public navCtrl: NavController) {
 
   }
 
-  initNativeMaps(mapElement) {
-    this.map = new GoogleMap(mapElement);
-    mapElement.classList.add('show-map');
-
-    GoogleMap.isAvailable().then(() => {
-      const position = new GoogleMapsLatLng(43.074395, -89.381056);
-      this.map.setPosition(position);
-    });
+  ngOnInit(): void {
+    this.drawMap();
   }
+  drawMap(): void {
+    let map = Leaflet.map('map');
+    Leaflet.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoicGF0cmlja3IiLCJhIjoiY2l2aW9lcXlvMDFqdTJvbGI2eXUwc2VjYSJ9.trTzsdDXD2lMJpTfCVsVuA', {
+      //attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+      maxZoom: 18
+    }).addTo(map);
 
+    //web location
+    map.locate({ setView: true});
 
-  ionViewDidLoad() {
-    let element = document.getElementById('map');
-    if (!element) {
-      console.error('Unable to initialize map, no map element with #map view reference.');
-      return;
+    //when we have a location draw a marker and accuracy circle
+    function onLocationFound(e) {
+      var radius = e.accuracy / 2;
+
+      Leaflet.marker(e.latlng).addTo(map)
+          .bindPopup("You are within " + radius + " meters from this point").openPopup();
+
+      Leaflet.circle(e.latlng, radius).addTo(map);
+    }
+    map.on('locationfound', onLocationFound);
+    //alert on location error
+    function onLocationError(e) {
+      alert(e.message);
     }
 
-    // Disable this switch if you'd like to only use JS maps, as the APIs
-    // are slightly different between the two. However, this makes it easy
-    // to use native maps while running in Cordova, and JS maps on the web.
-    if (this.platform.is('cordova') === true) {
-      this.initNativeMaps(element);
-    } else {
-      this.initJSMaps(element);
-    }
+    map.on('locationerror', onLocationError);
   }
-
 }
