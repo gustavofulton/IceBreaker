@@ -1,3 +1,19 @@
 page-contact {
+  ion-content {
+    text-align: center;
+    // background: url("http://www.designbolts.com/wp-content/uploads/2015/07/Colorfu-Polygon-iphone-6-background.jpg");
+  }
+
+  .profileImg {
+    border-radius: 50%;
+    height: 10em;
+    margin-top: 3em;
+    border: 3px solid grey;
+    opacity: 0.9;
+  }
+
+  .socialMedia {
+    text-align: center;
+  }
 
 }
