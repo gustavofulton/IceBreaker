@@ -1,15 +1,62 @@
 page-contact {
   ion-content {
-    text-align: center;
+    // text-align: center;
+    font-weight: 200;
     // background: url("http://www.designbolts.com/wp-content/uploads/2015/07/Colorfu-Polygon-iphone-6-background.jpg");
   }
 
+  .cover {
+    filter: blur(1px);
+
+  }
+
+
   .profileImg {
     border-radius: 50%;
-    height: 10em;
-    margin-top: 3em;
-    border: 3px solid grey;
+    height: 8em;
+    width: 8em;
+    float: left;
+    // border: 3px solid grey;
     opacity: 0.9;
+  }
+
+  .header {
+    margin-bottom: 5%;
+    // border-bottom: 1px solid grey;
+  }
+
+  .brief {
+    text-align: center;
+    padding-top: 5%;
+    float: right;
+    width: 60%;
+  }
+
+  .editProfile {
+    height: 2em;
+    font-weight: 200;
+  }
+
+  .description {
+    float: left;
+    width: 100%;
+    font-size: 1.2em;
+    color: black;
+    line-height: 0.5em;
+    font-weight: bold;
+  }
+  .description .shortbio {
+    font-weight: 400;
+  }
+
+  ion-list-header {
+    padding-top: 15px;
+    text-align: center;
+    font-size: 1em !important;
+  }
+
+  .snow {
+    color: #40c3fd;
   }
 
   .socialMedia {

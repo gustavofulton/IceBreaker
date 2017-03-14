@@ -4,37 +4,55 @@
       Contact
     </ion-title>
   </ion-navbar>
+  <ion-segment [(ngModel)]="type">
+    <ion-segment-button value="Profile">
+      Profile
+    </ion-segment-button>
+    <ion-segment-button value="Party">
+      Party
+    </ion-segment-button>
+  </ion-segment>
 </ion-header>
 
 <ion-content>
-  <!-- <img class="cover" src="http://2.bp.blogspot.com/-xmjmQzG1SE8/VC2L9UZNYbI/AAAAAAAAikU/QGO0KFnjANk/s1600/Abstract%2BTriangles%2BWallpapers%2B2.jpg" /> -->
-  <img class="profileImg" src="https://upload.wikimedia.org/wikipedia/en/7/70/Shawn_Tok_Profile.jpg" />
-  <ion-card-title class="name">
-      John Doe
-  </ion-card-title>
-  <ion-card-title color="grey">
-      Michigan State University
-  </ion-card-title>
-  <ion-card>
-    <ion-item>
-      <ion-icon name='contacts-outline' item-left style="color: #55acee"></ion-icon>
-      Followers
-      <ion-badge item-right>260k</ion-badge>
-    </ion-item>
-    <ion-item>
-      <ion-icon name='contact' item-left style="color: #55acee"></ion-icon>
-      Following
-      <ion-badge item-right>103k</ion-badge>
-    </ion-item>
+  <!-- <img class="cover" src="http://i.imgur.com/6K3CvN9.jpg" /> -->
+  <div [ngSwitch]="type">
+    <div class="profile" *ngSwitchCase="'Profile'">
+      <div class="header" padding>
+        <img class="profileImg" src="https://scontent-sjc2-1.xx.fbcdn.net/v/t1.0-9/14358876_10209253511148144_950072134702977400_n.jpg?oh=80fb01fa90b40a6b01c576c2d0d46b6a&oe=596B3DFF" />
+        <div class="brief">
+          <ion-card-title>
+              Ice Score: 230
+              <button class="editProfile" ion-button block color="light">Edit your Profile</button>
+          </ion-card-title>
+        </div>
+        <div class="description">
+            <p>Gustavo Fulton</p>
+            <p class="shortbio"> App Developer with passion for Music </p>
+        </div>
+      </div>
 
-    <ion-list-header>
-      Social Media:
-    </ion-list-header>
-    <ion-item class="socialMedia">
-      <a href="https://www.twitter.com"><ion-icon name='logo-twitter' style="color: #55acee"></ion-icon></a>
-      <a href="https://www.facebook.com"><ion-icon name='logo-facebook' style="color: #55acee"></ion-icon></a>
-      <a href="https://www.github.com"><ion-icon name='logo-github' style="color: #55acee"></ion-icon></a>
-      <a href="https://www.youtube.com"><ion-icon name='logo-youtube'  style="color: #55acee"></ion-icon></a>
-    </ion-item>
-  </ion-card>
+      <ion-list>
+        <ion-list-header>
+          What I like:
+        </ion-list-header>
+
+        <ion-item>
+          <ion-label>Movies</ion-label>
+          <ion-checkbox color="primary" checked="true"></ion-checkbox>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Music</ion-label>
+          <ion-checkbox color="secondary" checked="true"></ion-checkbox>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Food</ion-label>
+          <ion-checkbox color="danger" checked="true"></ion-checkbox>
+        </ion-item>
+
+      </ion-list>
+    </div>
+  </div>
 </ion-content>
