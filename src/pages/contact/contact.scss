@@ -62,5 +62,25 @@ page-contact {
   .socialMedia {
     text-align: center;
   }
+  .col {
+    padding: 0;
+  }
+  ion-card-content {
+    height: 15em;
+    // text-align: center;
+  }
+  ion-card-header {
+    text-align: center;
+  }
+
+  .groupImg {
+    border-radius: 50%;
+    margin: auto;
+    height: 5em;
+    width: 5em;
+    // border: 3px solid grey;
+    opacity: 0.9;
+    margin-bottom: 1em;
+  }
 
 }

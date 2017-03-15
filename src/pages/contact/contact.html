@@ -55,4 +55,60 @@
       </ion-list>
     </div>
   </div>
+  <div [ngSwitch]="type">
+    <div class="party" *ngSwitchCase="'Party'">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>
+            <ion-card>
+              <ion-card-header>
+                Group Fire
+              </ion-card-header>
+              <ion-card-content>
+                <img class="groupImg" src="https://www.giftsmate.net/wp-content/uploads/2015/11/Euphoric-3-Photo-Collage-Square-Wall-Clock-500x500.jpg" />
+                <p>Ice Score: 710</p>
+                High-level creative thinking and the confidence to use it.
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col col-6>
+            <ion-card>
+              <ion-card-header>
+                Group Ice
+              </ion-card-header>
+              <ion-card-content>
+                <img class="groupImg" src="https://www.giftsmate.net/wp-content/uploads/2015/11/Euphoric-3-Photo-Collage-Square-Wall-Clock-500x500.jpg" />
+                <p>Ice Score: 540</p>
+                Strong experience in relevant fields.
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col col-6>
+            <ion-card>
+              <ion-card-header>
+                Group Earth
+              </ion-card-header>
+              <ion-card-content>
+                <img class="groupImg" src="https://www.giftsmate.net/wp-content/uploads/2015/11/Euphoric-3-Photo-Collage-Square-Wall-Clock-500x500.jpg" />
+                <p>Ice Score: 100</p>
+                The ability to think laterally and literally.
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col col-6>
+            <ion-card>
+              <ion-card-header>
+                Group Wind
+              </ion-card-header>
+              <ion-card-content>
+                <img class="groupImg" src="https://www.giftsmate.net/wp-content/uploads/2015/11/Euphoric-3-Photo-Collage-Square-Wall-Clock-500x500.jpg" />
+                <p>Ice Score: 390</p>
+                Excellent written and verbal communication skills
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
 </ion-content>
